@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "479141998934",
+    "project_id": "dungeon-master-death-dealer",
+    "storage_bucket": "dungeon-master-death-dealer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479141998934:android:bb81e64450ed21999f26f7",
+        "android_client_info": {
+          "package_name": "com.example.dungeon_master_death_dealer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcaijIGAp4xKtkv6y9F51cqhK41pyr4Fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

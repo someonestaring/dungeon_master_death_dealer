@@ -37,6 +37,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase: ^9.0.3
   firebase_analytics: ^10.6.3
+  flutter_facebook_auth: ^5.0.11
+  cloud_firestore: ^4.13.0
+  cloud_functions: ^4.5.4
+  firebase_messaging: ^14.7.4
+  firebase_storage: ^11.5.0
+  firebase_auth: ^4.13.0
+  intl: ^0.18.1
+  geolocator: ^10.1.0
 
 dev_dependencies:
   flutter_test:

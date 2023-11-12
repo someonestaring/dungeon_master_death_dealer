@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/body_ext/home_body.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/body_ext/search_body.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/body_ext/post_body.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/body_ext/activity_body.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/body_ext/profile_body.dart';
 import 'package:dungeon_master_death_dealer/state/app_state.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,9 +13,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final size = AppStateScope.of(context).miscData['media_query'];
     //TODO: fill this stuff in 
-    PreferredSizeWidget? appBarContent(){}
-    Widget? bodyContent(){}
-    Widget? bottomNav(){}
+    PreferredSizeWidget? appBarContent(){
+      return null;
+    }
+    Widget? bodyContent(){
+      return null;
+    }
+    Widget? bottomNav(){
+      return null;
+    }
     return Scaffold(
       primary: true,
       appBar: appBarContent(),

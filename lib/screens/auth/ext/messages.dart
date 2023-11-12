@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dungeon_master_death_dealer/state/app_state.dart';
-import 'package:dungeon_master_death_dealer/screens/auth/ext/message_ext/new_message.dart';
 
 class MessageScreen extends StatefulWidget {
   const MessageScreen({Key? key}) : super(key: key);
@@ -41,8 +40,12 @@ class MessageScreenState extends State<MessageScreen> {
       );
     }
 
-    PreferredSizeWidget? appBar() {}
-    Widget? bottomNav() {}
+    PreferredSizeWidget? appBar() {
+      return null;
+    }
+    Widget? bottomNav() {
+      return null;
+    }
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,

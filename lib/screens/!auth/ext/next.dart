@@ -25,7 +25,7 @@ class NextState extends State<Next> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = AppStateScope.of(context).miscData['media_query'].size;
+    Size size = MediaQuery.of(context).size;
 
     PreferredSizeWidget appBar() {
       return PreferredSize(

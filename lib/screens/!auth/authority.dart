@@ -14,7 +14,11 @@ class Authority extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map userData = AppStateScope.of(context).userData;
-    final size = AppStateScope.of(context).miscData['media_query'].size;
+  final size = MediaQuery.of(context).size;
+  // AppStateWidget.of(context).updateMiscData(
+  //   {'media_query': firstSize},
+  // );
+  //   final size = AppStateScope.of(context).miscData['media_query'].size;
     final FirebaseAuth auth = FirebaseAuth.instance;
     final FirebaseFirestore dB = FirebaseFirestore.instance;
     PreferredSizeWidget? appBar() {
@@ -38,7 +42,7 @@ class Authority extends StatelessWidget {
               flex: 1,
             ),
             Text(
-              'DM: DD',
+              'Dungeon Master: \n \n   Death Dealer',
               style: GoogleFonts.dancingScript(
                 textStyle: const TextStyle(
                     color: Colors.white70,

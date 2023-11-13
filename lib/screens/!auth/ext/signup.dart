@@ -110,7 +110,7 @@ class SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     Map userData = AppStateScope.of(context).userData;
-    Size size = AppStateScope.of(context).miscData['media_query'].size;
+    Size size = MediaQuery.of(context).size;
 
     Widget bodyContent() {
       return Center(
@@ -124,7 +124,10 @@ class SignUpState extends State<SignUp> {
                   right: size.width * 0.25),
               child: Text(
                 'Sign up as ${userData['username']}?',
-                style: const TextStyle(color: Colors.white, fontSize: 24),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),

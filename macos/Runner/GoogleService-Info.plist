@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAOmk5k6uXu_cQ6qSnwCKEoyALunf_3udA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>479141998934</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.dungeonMasterDeathDealer.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>dungeon-master-death-dealer</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dungeon-master-death-dealer.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:479141998934:ios:6fe9ae7af9c27a7c9f26f7</string>
+</dict>
+</plist>

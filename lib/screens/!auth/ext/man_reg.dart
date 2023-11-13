@@ -33,7 +33,7 @@ class ManualRegisterState extends State<ManualRegister> {
 
   Future<void> getCountries() async {
     String data = await DefaultAssetBundle.of(context)
-        .loadString('assets/countries/countryList.json');
+        .loadString('assets/countries/country_list.json');
     final List<dynamic> countryList = jsonDecode(data);
     setState(() {
       countries = countryList;
@@ -42,7 +42,7 @@ class ManualRegisterState extends State<ManualRegister> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = AppStateScope.of(context).miscData['media_query'].size;
+    final Size size = MediaQuery.of(context).size;
     void phoneNext() {
       Locale locale = Localizations.localeOf(context);
       String? countryCode = locale.countryCode!.toUpperCase();

@@ -100,9 +100,9 @@ class SplishState extends State<Splish> {
 
 Widget splash(BuildContext context) {
   final size = MediaQuery.of(context).size;
-  AppStateWidget.of(context).updateMiscData(
-    {'media_query': size},
-  );
+  // AppStateWidget.of(context).updateMiscData(
+  //   {'media_query': size},
+  // );
   return Scaffold(
     //TODO: remove this manual color control and get theme stuff done
     backgroundColor: Colors.black45,
@@ -125,7 +125,7 @@ Widget splash(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.085),
+                bottom: size.height * 0.085),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

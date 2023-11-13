@@ -57,7 +57,7 @@ class LoginState extends State<Login> {
   }
 
   Widget bodyContent(context) {
-    Size size = AppStateScope.of(context).miscData['media_query'].size;
+    Size size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -274,7 +274,7 @@ class LoginState extends State<Login> {
 
   Future<void> getCountries() async {
     String data = await DefaultAssetBundle.of(context)
-        .loadString('assets/countries/countryList.json');
+        .loadString('assets/countries/country_list.json');
     final List<dynamic> countryList = jsonDecode(data);
     setState(() {
       countries = countryList;

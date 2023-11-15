@@ -76,6 +76,7 @@ class UsernameState extends State<Username> {
                         validated = true;
                       });
                     }
+                    return null;
                   },
                   style: const TextStyle(color: Colors.white70),
                   decoration: InputDecoration(

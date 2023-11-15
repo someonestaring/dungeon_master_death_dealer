@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:dungeon_master_death_dealer/screens/!auth/ext/man_reg.dart';
 import 'package:dungeon_master_death_dealer/screens/auth/utility.dart';
 import 'package:dungeon_master_death_dealer/state/app_state.dart';
-import 'package:dungeon_master_death_dealer/screens/!auth/ext/login.dart';
 
 class Authority extends StatelessWidget {
   const Authority({Key? key}) : super(key: key);
@@ -58,6 +57,7 @@ class Authority extends StatelessWidget {
               width: size.width,
               child: ElevatedButton(
                 onPressed: () async {
+                  // TODO: stop being lazy and link Facebook to||from firebase
                   final LoginResult loginResult =
                       await FacebookAuth.instance.login(
                     permissions: [

@@ -287,11 +287,11 @@ class LoginState extends State<Login> {
     final bool emailPatt = RegExp(r'(\S+)@(\S+)\.(\w+)').hasMatch(input);
     List<Map<String, dynamic>> users = <Map<String, dynamic>>[];
     store.collection('users').get().then((QuerySnapshot snaps) {
-      snaps.docs.forEach((doc) {
+      for (var doc in snaps.docs) {
         Map<String, dynamic> user = doc.data() as Map<String, dynamic>;
         users.add(user);
         users.retainWhere((user) => user['username'].toString() == input);
-      });
+      }
     });
     if (users.isNotEmpty) {
       AppStateWidget.of(context).updateUserData(users[0]);

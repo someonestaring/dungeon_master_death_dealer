@@ -10,7 +10,7 @@ class MessageScreen extends StatefulWidget {
 class MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
-    final size = AppStateScope.of(context).miscData['media_query'].size;
+    final size = MediaQuery.of(context).size;
     Map userData = AppStateScope.of(context).userData;
     Widget? bodyCont() {
       return const Center(

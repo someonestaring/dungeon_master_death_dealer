@@ -27,33 +27,40 @@ class SignUpState extends State<SignUp> {
     var checker = user;
     if (checker != null) {
       String? token = await _messaging.getToken();
-      await _dB
-          .collection('users')
-          .doc(auth.currentUser!.uid)
-          .get()
-          .then((res) {
-        Map<String, dynamic>? data = res.data();
-        if (data!.containsKey('tokens')) {
-          List tokens = data['tokens'];
-          if (tokens.contains(token)) {
-            return;
+      await _dB.collection('users').doc(auth.currentUser!.uid).get().then(
+        (res) {
+          Map<String, dynamic>? data = res.data();
+          if (data!.containsKey('tokens')) {
+            List tokens = data['tokens'];
+            if (tokens.contains(token)) {
+              return;
+            } else {
+              res.reference.update(
+                {
+                  'lastActive': DateTime.now(),
+                  'tokens': FieldValue.arrayUnion(
+                    [token],
+                  ),
+                },
+              );
+            }
           } else {
-            res.reference.update({
-              'lastActive': DateTime.now(),
-              'tokens': FieldValue.arrayUnion([token]),
-            });
+            res.reference.update(
+              {
+                'lastActive': DateTime.now(),
+                'tokens': [token],
+              },
+            );
           }
-        } else {
-          res.reference.update({
-            'lastActive': DateTime.now(),
-            'tokens': [token]
-          });
-        }
-        AppStateWidget.of(context).updateUserData(data);
-      });
-      setState(() {
-        user != null ? authed = true : authed = false;
-      });
+          AppStateWidget.of(context).updateUserData(data);
+        },
+      );
+      setState(
+        () {
+          //TODO: this is redudndant af check following logic
+          user != null ? authed = true : authed = false;
+        },
+      );
     }
   }
 
@@ -61,14 +68,16 @@ class SignUpState extends State<SignUp> {
   void initState() {
     super.initState();
     userSignIn();
-    auth.authStateChanges().listen((User? user) {
-      if (user == null) {
-        print('User is currently signed out!');
-      } else {
-        print('User is signed in!');
-        navigate(context);
-      }
-    });
+    auth.authStateChanges().listen(
+      (User? user) {
+        if (user == null) {
+          print('User is currently signed out!');
+        } else {
+          print('User is signed in!');
+          navigate(context);
+        }
+      },
+    );
   }
 
   @override
@@ -78,25 +87,35 @@ class SignUpState extends State<SignUp> {
 
   void navigate(BuildContext context) {
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => const Utility()));
+      MaterialPageRoute(
+        builder: (BuildContext context) => const Utility(),
+      ),
+    );
   }
+
+  //TODO: adapt phone number authentication, already grabbing it, just run it through firestore ceremonies 
+  // Future<void> continuePhoneSignIn(n,p) async {}
 
   Future<void> continueEmailSignIn(e, p) async {
     Map userData = AppStateScope.of(context).userData;
     try {
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
-          email: userData['email'],
-          password: AppStateScope.of(context).miscData['password']);
+        email: userData['email'],
+        password: AppStateScope.of(context).miscData['password'],
+      );
       var checker = userCredential.user;
       if (checker != null) {
         await auth.signInWithEmailAndPassword(email: e, password: p);
-        await _dB.collection("users").doc(userCredential.user!.uid).set({
-          'email': userData['email'],
-          // 'profilePhoto': userData['picture']['url'],
-          'fullName': userData['fullName'],
-          "lastActive": DateTime.now(),
-          'username': userData['username'],
-        });
+        await _dB.collection("users").doc(userCredential.user!.uid).set(
+          {
+            'email': userData['email'],
+            // 'profilePhoto': userData['picture']['url'],
+            'fullName': userData['fullName'],
+            "lastActive": DateTime.now(),
+            'username': userData['username'],
+            //TODO: store the rest of user data
+          },
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -132,10 +151,14 @@ class SignUpState extends State<SignUp> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: size.height * 0.025),
+              padding: EdgeInsets.only(
+                bottom: size.height * 0.025,
+              ),
               child: const Text(
                 'You can always change your username later.',
-                style: TextStyle(color: Colors.white54),
+                style: TextStyle(
+                  color: Colors.white54,
+                ),
               ),
             ),
             SizedBox(
@@ -157,7 +180,7 @@ class SignUpState extends State<SignUp> {
                 },
                 child: const Text('Sign Up'),
               ),
-            )
+            ),
           ],
         ),
       );
@@ -165,12 +188,16 @@ class SignUpState extends State<SignUp> {
 
     Widget bottomNav() {
       return Padding(
-        padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
+        padding: EdgeInsets.symmetric(
+          horizontal: size.width * 0.04,
+        ),
         child: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
             text: 'By tapping Sign Up, you agree to our ',
-            style: const TextStyle(color: Colors.white54),
+            style: const TextStyle(
+              color: Colors.white54,
+            ),
             children: [
               TextSpan(
                 text: 'Terms',

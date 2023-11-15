@@ -100,6 +100,7 @@ class ManualRegisterState extends State<ManualRegister> {
         padding: EdgeInsets.symmetric(
           horizontal: size.width * 0.02,
         ),
+        //TODO: fix overflow when keyboard is opened
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,

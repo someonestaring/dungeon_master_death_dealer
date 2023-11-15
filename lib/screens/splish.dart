@@ -116,7 +116,7 @@ Widget splash(BuildContext context) {
           ),
             //TODO: change all this UI stuff to: --> utilize Theme data --> Use app specific assets
           const Icon(
-            Icons.photo_camera,
+            Icons.add_task_rounded,
             color: Colors.white54,
             size: 150,
           ),
@@ -130,14 +130,14 @@ Widget splash(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'From',
+                  'Welcome',
                   style: TextStyle(
                     fontSize: 32.0,
                     color: Colors.white54,
                   ),
                 ),
                 Text(
-                  'CHIPPERTON',
+                  'Friends',
                   style: TextStyle(
                     fontSize: 32.0,
                     color: Colors.white54,

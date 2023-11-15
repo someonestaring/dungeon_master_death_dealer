@@ -17,7 +17,7 @@ class HomeScreenState extends State<HomeScreen> {
   String bodyNav = 'home';
   @override
   Widget build(BuildContext context) {
-    final size = AppStateScope.of(context).miscData['media_query'];
+    final size = MediaQuery.of(context).size;
     PreferredSizeWidget? appBarContent() {
       return PreferredSize(
         preferredSize: Size(size.width, size.height * 0.15),
@@ -95,6 +95,8 @@ class HomeScreenState extends State<HomeScreen> {
       );
     }
 
+// TODO: definite visit some whiteboarding on specifically what screens and features are going to be utilized, UI, UX, all that good stuff, i really want to have an active game mode, socials[ maybe stories too?? ], text game mode, etc etc WHITEBOARD 
+
     Widget? bodyContent() {
       switch (bodyNav) {
         case 'home':
@@ -122,6 +124,7 @@ class HomeScreenState extends State<HomeScreen> {
             color: Colors.black,
           ),
           child: Row(
+            // TODO: conditionally render active Icons 
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
@@ -150,8 +153,11 @@ class HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => const PostBody(),),);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const PostBody(),
+                    ),
+                  );
                   // setState(() {
                   //   bodyNav = 'post';
                   // });

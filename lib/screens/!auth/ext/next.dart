@@ -63,6 +63,7 @@ class NextState extends State<Next> {
                           validated = true;
                         });
                       }
+                      return null;
                     },
                     style: const TextStyle(color: Colors.white70),
                     decoration: InputDecoration(
@@ -85,6 +86,7 @@ class NextState extends State<Next> {
                         validated = true;
                       });
                     }
+                    return null;
                   },
                   style: const TextStyle(color: Colors.white70),
                   decoration: InputDecoration(
@@ -184,6 +186,7 @@ class NextState extends State<Next> {
     }
 
     Widget bottomNav() {
+      //TODO: fix overflow
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

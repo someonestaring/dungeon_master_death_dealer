@@ -1,6 +1,5 @@
 import 'package:dungeon_master_death_dealer/screens/auth/ext/post_ext/post_edit.dart';
 import 'package:flutter/material.dart';
-// import 'package:media_gallery/media_gallery.dart';
 
 class PostBody extends StatefulWidget {
   const PostBody({Key? key}) : super(key: key);
@@ -9,23 +8,13 @@ class PostBody extends StatefulWidget {
 }
 
 class PostBodyState extends State<PostBody> {
-  // dynamic _localMedia;
 
   @override
   void initState() {
     super.initState();
-    // _mediaAccess();
   }
 
-  // Future<void> _mediaAccess() async {
-  //   dynamic tempMedia = await MediaGallery.listMediaCollections(
-  //     mediaTypes: [MediaType.image, MediaType.video],
-  //   );
-  //   print(tempMedia);
-  //   setState(() {
-  //     _localMedia = tempMedia;
-  //   });
-  // }
+  // Future<void> _mediaAccess() async {}
 
   // Future<void> _cameraAccess() async {}
 
@@ -74,7 +63,7 @@ class PostBodyState extends State<PostBody> {
           itemBuilder: (BuildContext context, int index) =>
               // _localImages[index])
               const Card(
-            child: Text('assets/images/Demo_Gram_Logo.png'),
+            child: Text('assets'),
           ),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,

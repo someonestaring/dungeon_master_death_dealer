@@ -102,7 +102,7 @@ class AppStateWidgetState extends State<AppStateWidget> {
     });
   }
 
-  void backNav() {
+  void toHome() {
     pageCont.animateToPage(
       0,
       duration: const Duration(

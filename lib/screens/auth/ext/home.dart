@@ -20,7 +20,10 @@ class HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
     PreferredSizeWidget? appBarContent() {
       return PreferredSize(
-        preferredSize: Size(size.width, size.height * 0.15),
+        preferredSize: Size(
+          size.width,
+          size.height * 0.15,
+        ),
         child: SizedBox(
           height: size.height * 0.11,
           child: DecoratedBox(
@@ -35,7 +38,9 @@ class HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: size.width * 0.04),
+                      padding: EdgeInsets.only(
+                        left: size.width * 0.04,
+                      ),
                       child: Text(
                         'DM: DD',
                         style: GoogleFonts.dancingScript(
@@ -95,7 +100,7 @@ class HomeScreenState extends State<HomeScreen> {
       );
     }
 
-// TODO: definite visit some whiteboarding on specifically what screens and features are going to be utilized, UI, UX, all that good stuff, i really want to have an active game mode, socials[ maybe stories too?? ], text game mode, etc etc WHITEBOARD 
+// TODO: definite visit some whiteboarding on specifically what screens and features are going to be utilized, UI, UX, all that good stuff, i really want to have an active game mode, socials[ maybe stories too?? ], text game mode, etc etc WHITEBOARD
 
     Widget? bodyContent() {
       switch (bodyNav) {
@@ -124,7 +129,7 @@ class HomeScreenState extends State<HomeScreen> {
             color: Colors.black,
           ),
           child: Row(
-            // TODO: conditionally render active Icons 
+            // TODO: conditionally render active Icons
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(

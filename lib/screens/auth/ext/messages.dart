@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:dungeon_master_death_dealer/state/app_state.dart';import 'package:dungeon_master_death_dealer/screens/auth/ext/message_ext/new_message.dart';
+import 'package:dungeon_master_death_dealer/state/app_state.dart';
+import 'package:dungeon_master_death_dealer/screens/auth/ext/message_ext/new_message.dart';
 
 class MessageScreen extends StatefulWidget {
   const MessageScreen({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class MessageScreenState extends State<MessageScreen> {
                   children: [
                     IconButton(
                       onPressed: () {
-                        AppStateWidget.of(context).backNav();
+                        AppStateWidget.of(context).toHome();
                       },
                       icon: const Icon(
                         Icons.arrow_back,
@@ -73,7 +74,7 @@ class MessageScreenState extends State<MessageScreen> {
                   children: [
                     IconButton(
                       onPressed: () {
-                        print('Video button pressed');
+                        // print('Video button pressed');
                       },
                       icon: const Icon(
                         Icons.videocam,
@@ -82,7 +83,7 @@ class MessageScreenState extends State<MessageScreen> {
                     ),
                     IconButton(
                       onPressed: () {
-                        print('New Message button pressed');
+                        // print('New Message button pressed');
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
@@ -109,18 +110,22 @@ class MessageScreenState extends State<MessageScreen> {
         height: size.height * 0.061,
         width: size.width,
         child: DecoratedBox(
-          decoration: const BoxDecoration(color: Colors.black),
+          decoration: const BoxDecoration(
+            color: Colors.black,
+          ),
           child: FloatingActionButton(
             splashColor: Colors.transparent,
             backgroundColor: Colors.black,
             onPressed: () {
               print('camera thing pressed');
             },
-            child:const  Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: 15),
+                  padding: EdgeInsets.only(
+                    right: 15,
+                  ),
                   child: Icon(
                     Icons.photo_camera,
                     size: 32,
@@ -130,9 +135,10 @@ class MessageScreenState extends State<MessageScreen> {
                 Text(
                   'Camera',
                   style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w400),
+                    color: Colors.white70,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),

@@ -29,6 +29,11 @@ class HomeScreenState extends State<HomeScreen> {
           child: DecoratedBox(
             decoration: const BoxDecoration(
               color: Colors.black,
+              // boxShadow: [
+              //     color: Color.fromARGB(255, 94, 146, 172),
+              //     offset: Offset.fromDirection(90, 0.35)
+                
+              // ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

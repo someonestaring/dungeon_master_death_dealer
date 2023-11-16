@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:dungeon_master_death_dealer/themes/themes.dart';
 
 final PageController pageCont = PageController(
   initialPage: 0,
 );
+
+final ThemeData initialTheme = nativeMode();
 
 final Map initialState = {
   "dateJoined": DateTime,
@@ -19,7 +22,7 @@ final Map initialState = {
   'birthday': DateTime,
 };
 
-final Map miscData = {};
+final Map miscData = {'themeData': initialTheme};
 
 class AppState {
   AppState({

@@ -28,7 +28,7 @@ class HomeScreenState extends State<HomeScreen> {
           height: size.height * 0.11,
           child: DecoratedBox(
             decoration: const BoxDecoration(
-              color: Colors.black,
+              // color: Colors.black,
               // boxShadow: [
               //     color: Color.fromARGB(255, 94, 146, 172),
               //     offset: Offset.fromDirection(90, 0.35)
@@ -50,7 +50,7 @@ class HomeScreenState extends State<HomeScreen> {
                         'DM: DD',
                         style: GoogleFonts.dancingScript(
                           textStyle: const TextStyle(
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 22.0,
                             // wordSpacing: 0.75,
                             fontWeight: FontWeight.w900,
@@ -71,7 +71,7 @@ class HomeScreenState extends State<HomeScreen> {
                           },
                           icon: const Icon(
                             Icons.control_point_sharp,
-                            color: Colors.white,
+                            // color: Colors.white,
                           ),
                         ),
                         IconButton(
@@ -82,7 +82,7 @@ class HomeScreenState extends State<HomeScreen> {
                           },
                           icon: const Icon(
                             Icons.favorite_border_outlined,
-                            color: Colors.white,
+                            // color: Colors.white,
                           ),
                         ),
                         IconButton(
@@ -91,7 +91,7 @@ class HomeScreenState extends State<HomeScreen> {
                           },
                           icon: const Icon(
                             Icons.message_outlined,
-                            color: Colors.white,
+                            // color: Colors.white,
                           ),
                         ),
                       ],
@@ -131,7 +131,7 @@ class HomeScreenState extends State<HomeScreen> {
         width: size.width,
         child: DecoratedBox(
           decoration: const BoxDecoration(
-            color: Colors.black,
+            // color: Colors.black,
           ),
           child: Row(
             // TODO: conditionally render active Icons
@@ -146,7 +146,7 @@ class HomeScreenState extends State<HomeScreen> {
                 },
                 icon: const Icon(
                   Icons.home_outlined,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
               ),
               IconButton(
@@ -158,7 +158,7 @@ class HomeScreenState extends State<HomeScreen> {
                 },
                 icon: const Icon(
                   Icons.search,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
               ),
               IconButton(
@@ -175,7 +175,7 @@ class HomeScreenState extends State<HomeScreen> {
                 },
                 icon: const Icon(
                   Icons.control_point_sharp,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
               ),
               IconButton(
@@ -187,7 +187,7 @@ class HomeScreenState extends State<HomeScreen> {
                 },
                 icon: const Icon(
                   Icons.favorite_border_outlined,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
               ),
               IconButton(
@@ -199,7 +199,7 @@ class HomeScreenState extends State<HomeScreen> {
                 },
                 icon: const Icon(
                   Icons.person_outline,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
               ),
             ],

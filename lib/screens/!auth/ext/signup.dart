@@ -93,7 +93,7 @@ class SignUpState extends State<SignUp> {
     );
   }
 
-  //TODO: adapt phone number authentication, already grabbing it, just run it through firestore ceremonies 
+  //TODO: adapt phone number authentication, already grabbing it, just run it through firestore ceremonies
   // Future<void> continuePhoneSignIn(n,p) async {}
 
   Future<void> continueEmailSignIn(e, p) async {
@@ -138,13 +138,14 @@ class SignUpState extends State<SignUp> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                  bottom: size.height * 0.025,
-                  left: size.width * 0.25,
-                  right: size.width * 0.25),
+                bottom: size.height * 0.025,
+                left: size.width * 0.25,
+                right: size.width * 0.25,
+              ),
               child: Text(
                 'Sign up as ${userData['username']}?',
                 style: const TextStyle(
-                  color: Colors.white,
+                  // color: Colors.white,
                   fontSize: 24,
                 ),
                 textAlign: TextAlign.center,
@@ -157,8 +158,8 @@ class SignUpState extends State<SignUp> {
               child: const Text(
                 'You can always change your username later.',
                 style: TextStyle(
-                  color: Colors.white54,
-                ),
+                    // color: Colors.white54,
+                    ),
               ),
             ),
             SizedBox(
@@ -178,7 +179,9 @@ class SignUpState extends State<SignUp> {
                     print(e);
                   }
                 },
-                child: const Text('Sign Up'),
+                child: const Text(
+                  'Sign Up',
+                ),
               ),
             ),
           ],
@@ -196,12 +199,14 @@ class SignUpState extends State<SignUp> {
           text: TextSpan(
             text: 'By tapping Sign Up, you agree to our ',
             style: const TextStyle(
-              color: Colors.white54,
-            ),
+                // color: Colors.white54,
+                ),
             children: [
               TextSpan(
                 text: 'Terms',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(
+                    // color: Colors.white,
+                    ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => {
                         // TODO: do stuff for the terms}
@@ -209,11 +214,15 @@ class SignUpState extends State<SignUp> {
               ),
               const TextSpan(
                 text: ', ',
-                style: TextStyle(color: Colors.white54),
+                style: TextStyle(
+                  // color: Colors.white54,
+                ),
               ),
               TextSpan(
                 text: 'Data Policy ',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(
+                  // color: Colors.white,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => {
                         // TODO: do stuff for the data policy},
@@ -221,11 +230,15 @@ class SignUpState extends State<SignUp> {
               ),
               const TextSpan(
                 text: 'and ',
-                style: TextStyle(color: Colors.white54),
+                style: TextStyle(
+                  // color: Colors.white54,
+                ),
               ),
               TextSpan(
                 text: 'Cookie Policy',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(
+                  // color: Colors.white,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => {
                         // TODO: do stuff for the cookie policy
@@ -233,7 +246,9 @@ class SignUpState extends State<SignUp> {
               ),
               const TextSpan(
                 text: '.',
-                style: TextStyle(color: Colors.white54),
+                style: TextStyle(
+                  // color: Colors.white54,
+                ),
               ),
             ],
           ),
@@ -244,7 +259,7 @@ class SignUpState extends State<SignUp> {
     return Scaffold(
       body: bodyContent(),
       bottomNavigationBar: bottomNav(),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
     );
   }
 }

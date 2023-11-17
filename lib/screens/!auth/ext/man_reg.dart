@@ -72,8 +72,8 @@ class ManualRegisterState extends State<ManualRegister> {
           const Text(
             'Already have an account?',
             style: TextStyle(
-              color: Colors.white70,
-            ),
+                // color: Colors.white70,
+                ),
           ),
           TextButton(
             onPressed: () {
@@ -86,7 +86,7 @@ class ManualRegisterState extends State<ManualRegister> {
             child: const Text(
               'Log in.',
               style: TextStyle(
-                color: Colors.white,
+                // color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -109,7 +109,7 @@ class ManualRegisterState extends State<ManualRegister> {
               radius: 85,
               child: Icon(
                 Icons.account_circle_outlined,
-                color: Colors.white70,
+                // color: Colors.white70,
                 size: 172,
               ),
             ),
@@ -196,9 +196,11 @@ class ManualRegisterState extends State<ManualRegister> {
                   TextFormField(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[800],
+                      // fillColor: Colors.grey[800],
                       alignLabelWithHint: true,
-                      hintStyle: const TextStyle(color: Colors.white38),
+                      hintStyle: const TextStyle(
+                          // color: Colors.white38,
+                          ),
                       hintText: !methodType ? 'Phone Number' : 'Email',
                     ),
                     controller: !methodType ? phoneCont : emailCont,
@@ -226,12 +228,16 @@ class ManualRegisterState extends State<ManualRegister> {
                         : TextInputType.emailAddress,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.height * 0.01),
+                    padding: EdgeInsets.symmetric(
+                      vertical: size.height * 0.01,
+                    ),
                     child: Text(
                       !methodType
                           ? 'You may receive SMS updates from Demo_Gram and can opt out at any time.'
                           : '',
-                      style: const TextStyle(color: Colors.white54),
+                      style: const TextStyle(
+                          // color: Colors.white54,
+                          ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -241,7 +247,9 @@ class ManualRegisterState extends State<ManualRegister> {
                       SizedBox(
                         width: size.width * 0.9,
                         child: ElevatedButton(
-                          child: const Text('Next'),
+                          child: const Text(
+                            'Next',
+                          ),
                           onPressed: () {
                             if (formKey.currentState == null) {
                               print("formKey.currentState is null!");
@@ -257,41 +265,51 @@ class ManualRegisterState extends State<ManualRegister> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 12),
+              padding: const EdgeInsets.only(
+                top: 12,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: size.width * 0.4,
                     child: const Divider(
-                      color: Colors.white70,
-                    ),
+                        // color: Colors.white70,
+                        ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(left: 12, right: 12),
+                    padding: EdgeInsets.only(
+                      left: 12,
+                      right: 12,
+                    ),
                     child: Text(
                       'OR',
-                      style: TextStyle(color: Colors.white70),
+                      style: TextStyle(
+                          // color: Colors.white70,
+                          ),
                     ),
                   ),
                   SizedBox(
                     width: size.width * 0.4,
                     child: const Divider(
-                      color: Colors.white70,
-                    ),
+                        // color: Colors.white70,
+                        ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.02),
+              padding: EdgeInsets.only(
+                top: size.height * 0.02,
+              ),
               child: OutlinedButton(
                 style: ButtonStyle(
                   side: MaterialStateProperty.all(
                     const BorderSide(
-                        color: Colors.white70,
-                        width: 1.0,
-                        style: BorderStyle.solid),
+                      // color: Colors.white70,
+                      width: 1.0,
+                      style: BorderStyle.solid,
+                    ),
                   ),
                 ),
                 onPressed: () {},
@@ -306,8 +324,8 @@ class ManualRegisterState extends State<ManualRegister> {
                       Text(
                         'Continue with Facebook',
                         style: TextStyle(
-                          color: Colors.white,
-                        ),
+                            // color: Colors.white,
+                            ),
                       ),
                     ],
                   ),
@@ -320,7 +338,7 @@ class ManualRegisterState extends State<ManualRegister> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: bodyContent(),
       bottomNavigationBar: bottomNav(),
     );

@@ -42,11 +42,16 @@ class MessageScreenState extends State<MessageScreen> {
 
     PreferredSizeWidget? appBar() {
       return PreferredSize(
-        preferredSize: Size(size.width, size.height * 0.15),
+        preferredSize: Size(
+          size.width,
+          size.height * 0.15,
+        ),
         child: SizedBox(
           height: size.height * 0.11,
           child: DecoratedBox(
-            decoration: const BoxDecoration(color: Colors.black),
+            decoration: const BoxDecoration(
+                // color: Colors.black,
+                ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -59,14 +64,14 @@ class MessageScreenState extends State<MessageScreen> {
                       },
                       icon: const Icon(
                         Icons.arrow_back,
-                        color: Colors.white70,
+                        // color: Colors.white70,
                       ),
                     ),
                     Text(
                       "${userData['username']}",
                       style: const TextStyle(
-                        color: Colors.white70,
-                      ),
+                          // color: Colors.white70,
+                          ),
                     ),
                   ],
                 ),
@@ -78,7 +83,7 @@ class MessageScreenState extends State<MessageScreen> {
                       },
                       icon: const Icon(
                         Icons.videocam,
-                        color: Colors.white70,
+                        // color: Colors.white70,
                       ),
                     ),
                     IconButton(
@@ -93,7 +98,7 @@ class MessageScreenState extends State<MessageScreen> {
                       },
                       icon: const Icon(
                         Icons.library_add,
-                        color: Colors.white70,
+                        // color: Colors.white70,
                       ),
                     ),
                   ],
@@ -108,14 +113,14 @@ class MessageScreenState extends State<MessageScreen> {
     Widget? bottomNav() {
       return SizedBox(
         height: size.height * 0.061,
-        width: size.width,
+        width: size.width * 0.5,
         child: DecoratedBox(
           decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
+              // color: Colors.black,
+              ),
           child: FloatingActionButton(
-            splashColor: Colors.transparent,
-            backgroundColor: Colors.black,
+            // splashColor: Colors.transparent,
+            // backgroundColor: Colors.black,
             onPressed: () {
               print('camera thing pressed');
             },
@@ -129,13 +134,13 @@ class MessageScreenState extends State<MessageScreen> {
                   child: Icon(
                     Icons.photo_camera,
                     size: 32,
-                    color: Colors.white70,
+                    // color: Colors.white70,
                   ),
                 ),
                 Text(
                   'Camera',
                   style: TextStyle(
-                    color: Colors.white70,
+                    // color: Colors.white70,
                     fontSize: 24,
                     fontWeight: FontWeight.w400,
                   ),
@@ -149,7 +154,7 @@ class MessageScreenState extends State<MessageScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       primary: true,
       body: bodyCont(),
       appBar: appBar(),

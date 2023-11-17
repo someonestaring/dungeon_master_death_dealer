@@ -48,24 +48,32 @@ class UsernameState extends State<Username> {
                 child: const Text(
                   'CREATE USERNAME',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
+                    // color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: size.height * 0.01),
+                padding: EdgeInsets.symmetric(
+                  vertical: size.height * 0.01,
+                ),
                 child: const Text(
                   'Add a username or use our suggestion. You can change this at any time.',
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                  style: TextStyle(
+                    // color: Colors.white70,
+                    fontSize: 16,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: size.height * 0.01),
+                padding: EdgeInsets.symmetric(
+                  vertical: size.height * 0.01,
+                ),
                 child: TextFormField(
                   controller: cont,
-                  cursorColor: Colors.white54,
+                  // cursorColor: Colors.white54,
                   cursorWidth: 1,
                   keyboardType: TextInputType.name,
                   validator: (String? v) {
@@ -78,12 +86,16 @@ class UsernameState extends State<Username> {
                     }
                     return null;
                   },
-                  style: const TextStyle(color: Colors.white70),
+                  style: const TextStyle(
+                      // color: Colors.white70,
+                      ),
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.grey[800],
+                    // fillColor: Colors.grey[800],
                     hintText: 'Username',
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(
+                      // color: Colors.white54,
+                    ),
                     suffixIcon: !validated
                         ? const Icon(
                             Icons.check,
@@ -107,7 +119,7 @@ class UsernameState extends State<Username> {
                     } else if (formKey.currentState!.validate()) {
                       if (validated) {
                         AppStateWidget.of(context).updateUserData(
-                          {"username": cont.text},
+                          {"username": cont.text,},
                         );
                         Navigator.of(context).push(
                           MaterialPageRoute(
@@ -120,7 +132,7 @@ class UsernameState extends State<Username> {
                   child: const Text(
                     'Next',
                     style: TextStyle(
-                      color: Colors.white,
+                      // color: Colors.white,
                     ),
                   ),
                 ),
@@ -133,7 +145,7 @@ class UsernameState extends State<Username> {
 
     return Scaffold(
       appBar: appBar(),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: bodyContent(),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dungeon_master_death_dealer/screens/splish.dart';
 import 'package:dungeon_master_death_dealer/state/app_state.dart';
-import 'package:dungeon_master_death_dealer/themes/themes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

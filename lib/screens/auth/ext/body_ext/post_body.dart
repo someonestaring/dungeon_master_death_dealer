@@ -8,7 +8,6 @@ class PostBody extends StatefulWidget {
 }
 
 class PostBodyState extends State<PostBody> {
-
   @override
   void initState() {
     super.initState();
@@ -32,8 +31,8 @@ class PostBodyState extends State<PostBody> {
         width: size.width,
         child: const DecoratedBox(
           decoration: BoxDecoration(
-            color: Colors.white54,
-          ),
+              // color: Colors.white54,
+              ),
         ),
       );
     }
@@ -44,15 +43,17 @@ class PostBodyState extends State<PostBody> {
         width: size.width,
         child: const DecoratedBox(
           decoration: BoxDecoration(
-            color: Colors.white,
-          ),
+              // color: Colors.white,
+              ),
         ),
       );
     }
 
     Widget mediaGrid() {
       return DecoratedBox(
-        decoration: const BoxDecoration(color: Colors.transparent),
+        decoration: const BoxDecoration(
+            // color: Colors.transparent,
+            ),
         child: GridView.builder(
           addRepaintBoundaries: false,
           scrollDirection: Axis.vertical,
@@ -76,7 +77,10 @@ class PostBodyState extends State<PostBody> {
 
     PreferredSizeWidget appBar() {
       return PreferredSize(
-        preferredSize: Size(size.width, size.height * 0.15),
+        preferredSize: Size(
+          size.width,
+          size.height * 0.15,
+        ),
         child: SizedBox(
           height: size.height * 0.11,
           child: Row(
@@ -91,13 +95,13 @@ class PostBodyState extends State<PostBody> {
                     },
                     icon: const Icon(
                       Icons.close,
-                      color: Colors.white70,
+                      // color: Colors.white70,
                     ),
                   ),
                   const Text(
                     'New post',
                     style: TextStyle(
-                      color: Colors.white,
+                      // color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
@@ -115,7 +119,7 @@ class PostBodyState extends State<PostBody> {
                 },
                 icon: const Icon(
                   Icons.east,
-                  color: Colors.blue,
+                  // color: Colors.blue,
                 ),
               ),
             ],
@@ -139,7 +143,7 @@ class PostBodyState extends State<PostBody> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       appBar: appBar(),
       body: bodyContent(),
     );

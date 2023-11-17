@@ -105,7 +105,7 @@ Widget splash(BuildContext context) {
   // );
   return Scaffold(
     //TODO: remove this manual color control and get theme stuff done
-    backgroundColor: Colors.black45,
+    // backgroundColor: Colors.black45,
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,10 +114,10 @@ Widget splash(BuildContext context) {
           const Spacer(
             flex: 3,
           ),
-            //TODO: change all this UI stuff to: --> utilize Theme data --> Use app specific assets
+          //TODO: change all this UI stuff to: --> utilize Theme data --> Use app specific assets
           const Icon(
             Icons.add_task_rounded,
-            color: Colors.white54,
+            // color: Colors.white54,
             size: 150,
           ),
           const Spacer(
@@ -125,7 +125,8 @@ Widget splash(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-                bottom: size.height * 0.085),
+              bottom: size.height * 0.085,
+            ),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -133,14 +134,14 @@ Widget splash(BuildContext context) {
                   'Welcome',
                   style: TextStyle(
                     fontSize: 32.0,
-                    color: Colors.white54,
+                    // color: Colors.white54,
                   ),
                 ),
                 Text(
                   'Friends',
                   style: TextStyle(
                     fontSize: 32.0,
-                    color: Colors.white54,
+                    // color: Colors.white54,
                   ),
                 ),
               ],

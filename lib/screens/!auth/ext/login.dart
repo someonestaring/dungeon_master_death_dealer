@@ -72,10 +72,11 @@ class LoginState extends State<Login> {
             'DM: DD',
             style: GoogleFonts.dancingScript(
               textStyle: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 42.0,
-                  // wordSpacing: 0.75,
-                  fontWeight: FontWeight.w900),
+                // color: Colors.white70,
+                fontSize: 42.0,
+                // wordSpacing: 0.75,
+                fontWeight: FontWeight.w900,
+              ),
             ),
           ),
         ),
@@ -94,11 +95,15 @@ class LoginState extends State<Login> {
                   ),
                   child: TextFormField(
                     controller: signInCont,
-                    style: const TextStyle(color: Colors.white38),
-                    decoration: InputDecoration(
+                    style: const TextStyle(
+                        // color: Colors.white38,
+                        ),
+                    decoration: const InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[800],
-                      hintStyle: const TextStyle(color: Colors.white38),
+                      // fillColor: Colors.grey[800],
+                      hintStyle: TextStyle(
+                          // color: Colors.white38,
+                          ),
                       hintText: 'Phone Number, Email, or Username',
                     ),
                     validator: (String? value) {
@@ -116,16 +121,20 @@ class LoginState extends State<Login> {
                   child: TextFormField(
                     controller: passCont,
                     obscureText: true,
-                    style: const TextStyle(color: Colors.white38),
-                    decoration: InputDecoration(
+                    style: const TextStyle(
+                        // color: Colors.white38,
+                        ),
+                    decoration: const InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[800],
+                      // fillColor: Colors.grey[800],
                       alignLabelWithHint: true,
-                      hintStyle: const TextStyle(color: Colors.white38),
+                      hintStyle: TextStyle(
+                          // color: Colors.white38,
+                          ),
                       hintText: 'Password',
-                      suffixIcon: const Icon(
+                      suffixIcon: Icon(
                         Icons.visibility_off,
-                        color: Colors.white38,
+                        // color: Colors.white38,
                       ),
                     ),
                     validator: (String? value) {
@@ -140,7 +149,9 @@ class LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 0.0),
+                  padding: const EdgeInsets.only(
+                    bottom: 0.0,
+                  ),
                   child: SizedBox(
                     width: size.width,
                     child: ElevatedButton(
@@ -151,7 +162,9 @@ class LoginState extends State<Login> {
                           logIn();
                         }
                       },
-                      child: const Text('Log In'),
+                      child: const Text(
+                        'Log In',
+                      ),
                     ),
                   ),
                 ),
@@ -161,8 +174,8 @@ class LoginState extends State<Login> {
                     const Text(
                       'Forgot your login details?',
                       style: TextStyle(
-                        color: Colors.white70,
-                      ),
+                          // color: Colors.white70,
+                          ),
                     ),
                     TextButton(
                       onPressed: () {
@@ -171,7 +184,9 @@ class LoginState extends State<Login> {
                       child: const Text(
                         'Get help logging in.',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                          // color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
@@ -183,20 +198,25 @@ class LoginState extends State<Login> {
                     children: [
                       Expanded(
                         child: Divider(
-                          color: Colors.white70,
-                        ),
+                            // color: Colors.white70,
+                            ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 12, right: 12),
+                        padding: EdgeInsets.only(
+                          left: 12,
+                          right: 12,
+                        ),
                         child: Text(
                           'OR',
-                          style: TextStyle(color: Colors.white70),
+                          style: TextStyle(
+                              // color: Colors.white70,
+                              ),
                         ),
                       ),
                       Expanded(
                         child: Divider(
-                          color: Colors.white70,
-                        ),
+                            // color: Colors.white70,
+                            ),
                       ),
                     ],
                   ),
@@ -224,8 +244,13 @@ class LoginState extends State<Login> {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.facebook, color: Colors.white),
-                      Text('Login with Facebook')
+                      Icon(
+                        Icons.facebook,
+                        // color: Colors.white,
+                      ),
+                      Text(
+                        'Login with Facebook',
+                      )
                     ],
                   ),
                 )
@@ -269,7 +294,10 @@ class LoginState extends State<Login> {
 
   void navigate(BuildContext context) {
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => const Utility()));
+      MaterialPageRoute(
+        builder: (BuildContext context) => const Utility(),
+      ),
+    );
   }
 
   Future<void> getCountries() async {
@@ -372,11 +400,15 @@ class LoginState extends State<Login> {
                   TextFormField(
                     keyboardType: TextInputType.number,
                     controller: smsCont,
-                    style: const TextStyle(color: Colors.white38),
-                    decoration: InputDecoration(
+                    style: const TextStyle(
+                        // color: Colors.white38,
+                        ),
+                    decoration: const InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[800],
-                      hintStyle: const TextStyle(color: Colors.white38),
+                      // fillColor: Colors.grey[800],
+                      hintStyle: TextStyle(
+                          // color: Colors.white38,
+                          ),
                       hintText: 'SMS Code',
                     ),
                     validator: (String? value) {
@@ -493,7 +525,9 @@ class LoginState extends State<Login> {
           // print('parses number');
           if (!verification) {
             await auth.verifyPhoneNumber(
-              timeout: const Duration(seconds: 60),
+              timeout: const Duration(
+                seconds: 60,
+              ),
               phoneNumber: phoneNumber!,
               verificationCompleted: veriCompleted,
               verificationFailed: veriFailed,
@@ -524,7 +558,7 @@ class LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: bottomNav(context),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: Center(
         child: bodyContent(context),
       ),

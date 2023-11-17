@@ -10,7 +10,7 @@ class Utility extends StatelessWidget {
   Widget build(BuildContext context) {
     PageController pageCont = AppStateScope.of(context).pageCont;
     return Scaffold(
-      backgroundColor: Colors.black45,
+      // backgroundColor: Colors.black45,
       body: Center(
         child: PageView(
           physics: const BouncingScrollPhysics(),

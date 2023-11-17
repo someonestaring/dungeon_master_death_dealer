@@ -13,20 +13,25 @@ class Authority extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map userData = AppStateScope.of(context).userData;
-  final size = MediaQuery.of(context).size;
-  // AppStateWidget.of(context).updateMiscData(
-  //   {'media_query': firstSize},
-  // );
-  //   final size = AppStateScope.of(context).miscData['media_query'].size;
+    final size = MediaQuery.of(context).size;
+    // AppStateWidget.of(context).updateMiscData(
+    //   {'media_query': firstSize},
+    // );
+    //   final size = AppStateScope.of(context).miscData['media_query'].size;
     final FirebaseAuth auth = FirebaseAuth.instance;
     final FirebaseFirestore dB = FirebaseFirestore.instance;
     PreferredSizeWidget? appBar() {
       return PreferredSize(
-        preferredSize: Size(size.width, size.height * 0.15),
+        preferredSize: Size(
+          size.width,
+          size.height * 0.15,
+        ),
         child: const Center(
           child: Text(
             'Country Selector: Handled Internally',
-            style: TextStyle(color: Colors.white70),
+            style: TextStyle(
+                // color: Colors.white70,
+                ),
           ),
         ),
       );
@@ -44,10 +49,11 @@ class Authority extends StatelessWidget {
               'Dungeon Master: \n \n   Death Dealer',
               style: GoogleFonts.dancingScript(
                 textStyle: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 42.0,
-                    // wordSpacing: 0.75,
-                    fontWeight: FontWeight.w900),
+                  // color: Colors.white70,
+                  fontSize: 42.0,
+                  // wordSpacing: 0.75,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
             ),
             const Spacer(
@@ -81,49 +87,64 @@ class Authority extends StatelessWidget {
                       "lastActive": DateTime.now(),
                       'username': data.displayName,
                     });
-                    dB.collection("users").doc(auth.currentUser!.uid).set({
-                      'email': userData['email'],
-                      'profilePhoto': userData['profilePhoto'],
-                      'fullName': userData['fullName'],
-                      'firstName': userData['firstName'],
-                      'lastName': userData['lastName'],
-                      'lastActive': DateTime.now(),
-                      'username': userData['username'],
-                    });
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (BuildContext context) => const Utility()));
+                    dB.collection("users").doc(auth.currentUser!.uid).set(
+                      {
+                        'email': userData['email'],
+                        'profilePhoto': userData['profilePhoto'],
+                        'fullName': userData['fullName'],
+                        'firstName': userData['firstName'],
+                        'lastName': userData['lastName'],
+                        'lastActive': DateTime.now(),
+                        'username': userData['username'],
+                      },
+                    );
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const Utility(),
+                      ),
+                    );
                   });
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.facebook, color: Colors.white),
+                    Icon(
+                      Icons.facebook,
+                      // color: Colors.white,
+                    ),
                     Text('Login with Facebook'),
                   ],
                 ),
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 12),
+              padding: EdgeInsets.only(
+                top: 12,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Divider(
-                      color: Colors.white70,
-                    ),
+                        // color: Colors.white70,
+                        ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 12, right: 12),
+                    padding: EdgeInsets.only(
+                      left: 12,
+                      right: 12,
+                    ),
                     child: Text(
                       'OR',
-                      style: TextStyle(color: Colors.white70),
+                      style: TextStyle(
+                          // color: Colors.white70,
+                          ),
                     ),
                   ),
                   Expanded(
                     child: Divider(
-                      color: Colors.white70,
-                    ),
+                        // color: Colors.white70,
+                        ),
                   ),
                 ],
               ),
@@ -136,10 +157,12 @@ class Authority extends StatelessWidget {
                   ),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Sign up with email or phone number',
                 style: TextStyle(
-                    color: Colors.blue[300], fontWeight: FontWeight.bold),
+                  // color: Colors.blue[300],
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const Spacer(
@@ -156,7 +179,7 @@ class Authority extends StatelessWidget {
 
     return Scaffold(
       appBar: appBar(),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: bodyContent(),
       bottomNavigationBar: bottomNav(),
     );
